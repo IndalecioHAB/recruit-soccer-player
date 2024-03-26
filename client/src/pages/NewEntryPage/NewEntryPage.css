@@ -1,0 +1,15 @@
+main > div.entry-form > form {
+    font-family: inherit;
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+}
+
+@media screen and (min-width: 768px) {
+    main > div.entry-form > form {
+        width: 100wh;
+        height: 100vh;
+    }
+  }
