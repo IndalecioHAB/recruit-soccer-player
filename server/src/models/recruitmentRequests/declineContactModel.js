@@ -7,11 +7,11 @@ const declineContractModel = async (contractId) => {
 
   // Rechazamos el contrato.
   await pool.query(
-    `UPDATE recruitmentrequests SET status = 'rejected' WHERE id = ?`,
+    `UPDATE recruitmentRequests SET status = 'rejected' WHERE id = ?`,
     [contractId]
   );
   //Borramos el contrato
-  // await pool.query(`DELETE FROM recruitmentrequests WHERE id = ?`, [
+  // await pool.query(`DELETE FROM recruitmentRequests WHERE id = ?`, [
   //   contractId,
   // ]);
 };
