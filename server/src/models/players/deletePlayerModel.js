@@ -12,7 +12,7 @@ const deletePlayerModel = async (playerId, userId) => {
     [playerId]
   );
 
-  // Eliminamos el video del jugador.
+  // Eliminamos los videos de las entradas del jugador.
   await pool.query(`DELETE FROM entryvideos WHERE entryId IN (SELECT id FROM entry WHERE playerId = ?);
   `, [playerId]);
 
