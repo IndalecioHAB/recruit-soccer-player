@@ -36,7 +36,7 @@ const newRecruitmentController = async (req, res, next) => {
     const pool = await getPool();
     // Consulta rapida para saber si ya hay un contrato
     const [prevContract] = await pool.query(
-      `SELECT playerId, recruiterId FROM recruitmentrequests WHERE recruiterId = ? AND playerId = ?`,
+      `SELECT playerId, recruiterId FROM recruitmentRequests WHERE recruiterId = ? AND playerId = ?`,
       [req.user.id, playerId]
     );
 
@@ -67,7 +67,7 @@ const newRecruitmentController = async (req, res, next) => {
 
     // Guardamos la info en la base de datos
     await pool.query(
-      `INSERT INTO recruitmentrequests (playerId, familyId, recruiterId, status) VALUES (?, ?, ?, ?)`,
+      `INSERT INTO recruitmentRequests (playerId, familyId, recruiterId, status) VALUES (?, ?, ?, ?)`,
       [playerId, entry.userId, req.user.id, "pending"]
     );
 
