@@ -7,8 +7,9 @@ const deletePlayerModel = async (playerId, userId) => {
 
   // Borramos los contratos relacionados con el jugador
   await pool.query(
-    `DELETE FROM recruitmentrequests WHERE playerId = ? AND familyId = ?`,
-    [playerId, userId]
+    `DELETE FROM entryvideos WHERE entryId IN (SELECT id FROM entry WHERE playerId = ?);
+  `,
+    [playerId]
   );
 
   // Eliminamos el video del jugador.
