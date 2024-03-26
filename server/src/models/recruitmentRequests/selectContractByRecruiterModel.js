@@ -19,7 +19,7 @@ const selectContractByRecruiterModel = async (recruiterId = "") => {
         p.name,
         u.username AS family,
         r.status
-    FROM recruitmentrequests r   
+    FROM recruitmentRequests r   
     INNER JOIN players p ON r.playerId = p.id
     iNNER JOIN users u ON p.userId = u.id          
     WHERE r.recruiterId = ?
