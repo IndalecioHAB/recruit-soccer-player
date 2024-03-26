@@ -7,7 +7,7 @@ const deletePlayerModel = async (playerId, userId) => {
 
   // Borramos los contratos relacionados con el jugador
   await pool.query(
-    `DELETE FROM RecruitmentRequests WHERE entryId IN (SELECT id FROM entry WHERE playerId = ?);
+    `DELETE FROM RecruitmentRequests WHERE playerId IN (SELECT id FROM entry WHERE playerId = ?);
   `,
     [playerId]
   );
