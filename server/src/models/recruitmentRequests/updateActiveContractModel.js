@@ -10,7 +10,7 @@ const updateActiveContractModel = async (confirmationCode, contractId) => {
 
     // Aceptamos el contrato.
     await pool.query(
-        `UPDATE recruitmentrequests SET confirmationCode = ?, status = 'accepted' WHERE id = ?`,
+        `UPDATE recruitmentRequests SET confirmationCode = ?, status = 'accepted' WHERE id = ?`,
         [confirmationCode, contractId],
     );
 };
