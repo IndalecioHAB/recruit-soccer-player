@@ -33,7 +33,7 @@ router.get('/entries', authUserOptionalController, listEntriesController);
 router.get('/entries/:entryId', authUserOptionalController, getEntryController);
 
 // Middleware que agrega un video a una entrada existente.
-router.post('/entries/:entryId/videos', authUserController, addVideoController);
+router.post('/entries/:entryId/videos/:playerId', authUserController, addVideoController);
 
 // Middleware que elimina un video de una entrada existente.
 router.delete(
