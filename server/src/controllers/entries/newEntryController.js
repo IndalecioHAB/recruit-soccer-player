@@ -54,7 +54,7 @@ const newEntryController = async (req, res, next) => {
                 const videoName = await saveVideo(video);
 
                 // Guardamos la foto en la base de datos y obtenemos el ID que le ha asignado la base de datos.
-                const videoId = await insertVideoModel(videoName, entryId);
+                const videoId = await insertVideoModel(videoName, entryId, playerId);
 
                 // Pusheamos la foto al array de fotos.
                 videos.push({
