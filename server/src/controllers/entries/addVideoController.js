@@ -25,7 +25,7 @@ const addVideoController = async (req, res, next) => {
         await validateSchema(addVideoSchema, req.files || {});
 
         // Obtenemos los path params.
-        const { entryId } = req.params;
+        const { entryId, playerId } = req.params;
 
         // Obtenemos la foto.
         const video = req.files?.video;
@@ -48,7 +48,7 @@ const addVideoController = async (req, res, next) => {
         const videoName = await saveVideo(video);
 
         // Guardamos la foto en la base de datos y obtenemos su ID.
-        const videoId = await insertVideoModel(videoName, entryId);
+        const videoId = await insertVideoModel(videoName, entryId, playerId);
 
         res.status(201).send({
             status: 'ok',
