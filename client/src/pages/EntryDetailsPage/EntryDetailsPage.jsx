@@ -127,7 +127,7 @@ const EntryDetailsPage = () => {
                       type="video/mp4"
                     />
                   </video>
-                  {authUser && authUser.role === "family" && (
+                  {authUser?.id === entry.userId && (
                     <button onClick={() => handleDeleteVideo(video.id)}>
                       Delete Video
                     </button>
