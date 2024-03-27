@@ -18,6 +18,17 @@ const validateContractController = async (req, res, next) => {
             notFoundError('contractId');
         }
 
+        // Buscamos a un contrato con el código proporcionado.
+        const [contract] = await pool.query(
+        `SELECT id FROM RecruitmentRequests WHERE confirmationCode = ?`,
+        [confirmationCode],
+        );
+
+        // Si no existe ningún contrato con ese código lanzamos un error.
+        if (contract.length < 1) {
+            notFoundError('contract');
+        }
+
         // Aceptamos el contrato.
         await updateActiveContractModel(confirmationCode, contractId);
 

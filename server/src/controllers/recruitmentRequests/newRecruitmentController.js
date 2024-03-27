@@ -65,14 +65,14 @@ const newRecruitmentController = async (req, res, next) => {
       [playerId]
     );
 
-    // Guardamos la info en la base de datos
-    await pool.query(
-      `INSERT INTO RecruitmentRequests (playerId, familyId, recruiterId, status) VALUES (?, ?, ?, ?)`,
-      [playerId, entry.userId, req.user.id, "pending"]
-    );
-
     // Creamos un código de contrato.
     const contractCode = crypto.randomBytes(15).toString("hex");
+
+    // Guardamos la info en la base de datos
+    await pool.query(
+      `INSERT INTO RecruitmentRequests (playerId, familyId, recruiterId, status, confirmationCode) VALUES (?, ?, ?, ?)`,
+      [playerId, entry.userId, req.user.id, "pending", contractCode]
+    );
 
     // Asunto del email de verificación.
     const emailSubject = `Solicitud de contratacion para el jugador ${playerName[0].name}`;

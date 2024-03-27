@@ -1,0 +1,24 @@
+form.new-player {
+    text-align: center;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
+}
+
+main > form.new-player > h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 1rem; 
+    font-size: 1.8rem;   
+}
+
+@media screen and (min-width: 768px) {
+    form.new-player {
+        width: 100%;
+        height: 100vh;
+        justify-content:start;
+    }
+  }
+

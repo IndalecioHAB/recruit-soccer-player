@@ -1,0 +1,102 @@
+main > div.profile-form {
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    gap:1rem;
+    justify-content: center;
+    align-items: center;
+}
+
+main > div.profile-form > h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 1rem;
+}
+
+main > div.profile-form > img {
+    width: 150px;
+    height: 150px;
+    border-radius:10%; 
+    object-fit: cover;  
+}
+
+main > div.profile-form > form {
+    text-align: center;   
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:1rem;
+}
+
+main > div.profile-form> div.players {   
+    min-width: 20rem;
+    border-radius: 1rem;    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+}
+
+main > div.profile-form> div.players > h3 {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-bottom: 1rem;  
+}
+
+main > div.profile-form> div.players > div.row {    
+    width: 50%;
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    align-items: center; 
+    gap:0.5rem;  
+}
+
+main > div.profile-form> div.players > div.row > div.players-position {
+    background-color: #CED1D4; 
+}
+
+main > div.profile-form> div.players > div.row > div.players-position { 
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.8);  
+    border: 1px solid;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    width: 100wh;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items:center;
+}
+
+main > div.profile-form> div.players > div.row > div.players-position > a {
+    width: 100wh;
+}
+
+main > div.profile-form> div.players > div.row > div.players-position > a > img {
+    width: 150px;
+    height: 150px;
+    border-radius:10%;  
+}
+
+@media screen and (min-width: 768px) {
+    main > div.profile-form {      
+        width: 100wh;
+        height: 100vh;
+        justify-content:flex-start;
+    }
+    
+    main > div.profile-form > img {
+        width: 150px;
+        height: 150px;
+        object-fit: cover;            
+    }
+
+    main > div.profile-form> div.players > div.row {    
+        width: 100%;
+        flex-direction:row;
+    }
+
+
+
+  }
