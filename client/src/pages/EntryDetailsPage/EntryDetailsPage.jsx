@@ -173,7 +173,7 @@ const EntryDetailsPage = () => {
                 </>
               )}
             </div>
-            {authUser.id === entry.userId && (
+            {authUser?.id === entry.userId && (
               <div className="delete-video">
                 <p>Do you want to delete this entry?</p>
                 <button onClick={() => handleDeleteEntry()}>
