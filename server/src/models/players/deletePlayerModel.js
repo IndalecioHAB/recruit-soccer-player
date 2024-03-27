@@ -6,15 +6,10 @@ const deletePlayerModel = async (playerId, userId) => {
   const pool = await getPool();
 
   // Borramos los contratos relacionados con el jugador
-  await pool.query(
-    `DELETE FROM RecruitmentRequests WHERE playerId IN (SELECT id FROM entry WHERE playerId = ?);
-  `,
-    [playerId]
-  );
+  await pool.query(`DELETE FROM RecruitmentRequests WHERE playerId = ?`, [playerId]);
 
   // Eliminamos los videos de las entradas del jugador.
-  await pool.query(`DELETE FROM entryVideos WHERE entryId IN (SELECT id FROM entry WHERE playerId = ?);
-  `, [playerId]);
+  await pool.query(`DELETE FROM entryVideos WHERE playerId = ?`, [playerId]);
 
   // Borramos las entradas relacionadas con el jugador
   await pool.query(`DELETE FROM entry WHERE playerId = ? AND userId = ?`, [

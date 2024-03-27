@@ -1,0 +1,67 @@
+main > div.container {    
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:1rem;
+}
+
+main > div.buttons {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    display: flex;
+    gap:1rem;  
+}
+
+main > div.container > form {
+    text-align: center;
+    width: 55%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap:1rem;
+}
+
+main > div.container > form > button {
+    margin-top: 0.5rem;
+}
+
+main > div.container > a {
+    cursor: pointer;
+    font-family: football;
+    font-size: 1rem;
+    text-decoration: none;
+    color:#333333;
+}
+
+main > div.container > a > section { 
+    box-shadow: 1px 1px 1px 2px rgba(0, 0, 0, 0.8);    
+    background-color: #CED1D4;   
+    border-radius: 0.5rem;
+    padding: 1rem;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap:0.5rem;
+}
+
+main > div.container > a > section > div.videos-container {
+    display: flex;
+    justify-content: center;
+}
+
+main > div.container > a > section > div.videos-container > video {
+    border-radius: 0.5rem;
+    width: 90%;
+    height: 90%;    
+}
+
+@media screen and (min-width: 768px) {
+
+    main > div.container > form.search-form {        
+        flex-direction: row; 
+        justify-content: center;       
+    }
+  }
