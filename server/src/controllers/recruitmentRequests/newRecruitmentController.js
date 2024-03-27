@@ -70,7 +70,7 @@ const newRecruitmentController = async (req, res, next) => {
 
     // Guardamos la info en la base de datos
     await pool.query(
-      `INSERT INTO RecruitmentRequests (playerId, familyId, recruiterId, status, confirmationCode) VALUES (?, ?, ?, ?)`,
+      `INSERT INTO RecruitmentRequests (playerId, familyId, recruiterId, status, confirmationCode) VALUES (?, ?, ?, ?, ?)`,
       [playerId, entry.userId, req.user.id, "pending", contractCode]
     );
 
