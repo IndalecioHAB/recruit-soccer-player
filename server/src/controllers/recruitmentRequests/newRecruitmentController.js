@@ -81,9 +81,9 @@ const newRecruitmentController = async (req, res, next) => {
     const emailBody = `
             ¡Estimada Familia ${entry.username}!
 
-            Me llamo ${recruiterName[0].username} y estoy interesado en reclutar a su jugador ${playerName[0].name}. Para aceptar el contrato, haz clic en el siguiente enlace:
+            Me llamo ${recruiterName[0].username} y estoy interesado en reclutar a su jugador ${playerName[0].name}. Para aceptar el contrato, introduce el codigo en el apartado Contratos de la web:
 
-            <a href="${CLIENT_URL}/users/validate/${contractCode}">¡Activar mi cuenta!</a>
+            ${contractCode}
         `;
 
     // Enviamos el email de verificación al usuario.
