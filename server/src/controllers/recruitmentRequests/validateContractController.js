@@ -2,6 +2,8 @@
 import updateActiveContractModel from "../../models/recruitmentRequests/updateActiveContractModel.js";
 // Importamos los errores que necesitamos
 import { notFoundError } from "../../services/errorService.js";
+// Importamos la función que devuelve una conexión con la base de datos.
+import getPool from "../../db/getPool.js";
 
 // Función controladora final que valida un contrato.
 const validateContractController = async (req, res, next) => {
@@ -17,6 +19,9 @@ const validateContractController = async (req, res, next) => {
         if (!contractId) {
             notFoundError('contractId');
         }
+
+        //Traemos la conexion
+        const pool = await getPool();
 
         // Buscamos a un contrato con el código proporcionado.
         const [contract] = await pool.query(
