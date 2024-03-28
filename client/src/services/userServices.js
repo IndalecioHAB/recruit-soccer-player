@@ -38,7 +38,7 @@ export const activateUserService = async (registrationCode) => {
     const res = await fetch(
         `${VITE_API_URL}/users/validate/${registrationCode}`,
         {
-            method: 'put',
+            method: 'PUT',
         }
     );
 
