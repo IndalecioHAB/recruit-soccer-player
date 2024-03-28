@@ -33,7 +33,7 @@ const RegisterForm = () => {
     } else {
       alert("Las contraseñas no coinciden");
     }
-    navigate("/login");
+    navigate("/users/validate");
     //Vaciamos los valores del formulario
     setUsername("");
     setEmail("");
