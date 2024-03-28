@@ -53,7 +53,7 @@ const FamilyContractsPage = () => {
   const handleAccept = async (contractId) => {
     try {
       await acceptContract(contractId, confirmationCode);
-      toast.success("Contract Accpeted");
+      toast.success("Contract Accepted");
       setConfirmationCode("");
       navigate("/");
     } catch (error) {
