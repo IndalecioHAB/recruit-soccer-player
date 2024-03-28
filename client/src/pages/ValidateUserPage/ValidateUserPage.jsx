@@ -1,45 +1,50 @@
 // Importamos los hooks.
-import { useEffect } from 'react';
-import { useNavigate, useParams } from 'react-router-dom';
-
-// Importamos la función toast.
-import toast from 'react-hot-toast';
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 
 // Importamos los servicios.
-import { activateUserService } from '../../services/userServices';
+import { activateUserService } from "../../services/userServices";
+
+// Importamos el CSS.
+import './ValidateUserPage.css';
 
 // Inicializamos el componente.
 const ValidateUserPage = () => {
-    // Obtenemos la función navigate.
-    const navigate = useNavigate();
+  // Obtenemos la función navigate.
+  const navigate = useNavigate();
 
-    // Obtenemos el path param con el código de registro.
-    const { registrationCode } = useParams();
+  // Obtenemos el path param con el código de registro.
+  const [registrationCode, setRegistrationCode] = useState("");
 
-    // Utilizamos useEffect para validar al usuario cuando se monte el componente.
-    useEffect(() => {
-        // Realizamos el fetch.
-        const fetchValidateUser = async () => {
-            try {
-                await activateUserService(registrationCode);
-                // Si todo va bien redirigimos a login.
-                toast.success('User Activated');
-                navigate('/login');
-            } catch (err) {
-                toast.error(err.message);
-            }
-        };
+  // Realizamos el fetch.
+  const handleActivateUser = async (e) => {
+    e.preventDefault(); // Prevenir el comportamiento por defecto del envío del formulario
+    try {
+      await activateUserService(registrationCode);
+      // Si todo va bien redirigimos a login.
+      toast.success("User Activated");
+      navigate('/login');
+    } catch (err) {
+      toast.error(err.message);
+    }
+  };
 
-        // Llamamos a la función anterior.
-        fetchValidateUser();
-    }, [navigate, registrationCode]);
-
-    return (
-        <main>
-            <h2>User Validate</h2>
-            <p>Plase, Wait</p>
-        </main>
-    );
+  return (
+    <main>
+      <h2>User Validate</h2>
+      <form className="validate-user" onSubmit={handleActivateUser}>
+        <label>          
+          Introduce Your Activation Code:
+          <input
+            type="text"
+            onChange={(e) => setRegistrationCode(e.target.value)}
+          />
+        </label>
+        <button>Activate User</button>
+      </form>
+    </main>
+  );
 };
 
 export default ValidateUserPage;
