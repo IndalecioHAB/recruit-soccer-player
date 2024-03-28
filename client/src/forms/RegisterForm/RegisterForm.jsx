@@ -6,11 +6,14 @@ import { userRegister } from "../../services/userServices";
 
 // Importamos el contexto.
 import { AuthContext } from "../../contexts/AuthContext";
+import { Navigate, useNavigate } from "react-router-dom";
 
 // Creamos la pagina Register Page
 const RegisterForm = () => {
   // Cogemos las funciones que necesitamos del contexto
   const { authRegister } = useContext(AuthContext);
+  // Creamos la variable navigate
+  const navigate = useNavigate();
 
   // Hacemos una variable por cada evento change
   const [username, setUsername] = useState("");
@@ -30,7 +33,7 @@ const RegisterForm = () => {
     } else {
       alert("Las contraseñas no coinciden");
     }
-
+    navigate("/login");
     //Vaciamos los valores del formulario
     setUsername("");
     setEmail("");
@@ -70,7 +73,7 @@ const RegisterForm = () => {
             name="role"
             onChange={(e) => setRole(e.target.value)}
           >
-             <option value="choose">Choose your role</option>
+            <option value="choose">Choose your role</option>
             <option value="family">Family</option>
             <option value="recruiter">Recruiter</option>
           </select>

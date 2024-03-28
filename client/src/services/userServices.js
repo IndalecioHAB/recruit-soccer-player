@@ -38,7 +38,7 @@ export const activateUserService = async (registrationCode) => {
     const res = await fetch(
         `${VITE_API_URL}/users/validate/${registrationCode}`,
         {
-            method: 'PUT',
+            method: 'put',
         }
     );
 
@@ -49,6 +49,8 @@ export const activateUserService = async (registrationCode) => {
     if (body.status === 'error') {
         throw new Error(body.message);
     }
+
+    return body.message;
 };
 
 // Funcion de login

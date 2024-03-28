@@ -50,7 +50,7 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route
-          path="/users/validate/:registrationCode"
+          path="/users/validate"
           element={<ValidateUserPage />}
         />
         <Route path="/profile" element={authUser ? (<UserProfilePage />) : (<Navigate to="/"/>)} />

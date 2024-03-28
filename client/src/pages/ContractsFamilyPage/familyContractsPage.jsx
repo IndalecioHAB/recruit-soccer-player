@@ -89,7 +89,10 @@ const FamilyContractsPage = () => {
                   <>
                     <form
                       className="accept-contract"
-                      onSubmit={() => handleAccept(contract.id)}
+                      onSubmit={(e) => {
+                        e.preventDefault();
+                        handleAccept(contract.id);
+                      }}
                     >
                       <label htmlFor="code">
                         Introduce your confirmation code:
