@@ -39,7 +39,7 @@ const newUserController = async (req, res, next) => {
             ¡Bienvenid@ ${username}!
 
             Gracias por registrarte en Reclutadores y Familias. Para activar tu cuenta,
-            haz clic en el enlace e introduce el siguiente codigo: ${registrationCode}
+            introduce el siguiente codigo en el enlace: ${registrationCode}
 
             <a href="${CLIENT_URL}/validate">¡Activar mi cuenta!</a>
         `;
