@@ -32,7 +32,7 @@ const ValidateUserPage = () => {
 
   return (
     <main>
-      <h2>User Validate</h2>
+      <h2>Activate Your User</h2>
       <form className="validate-user" onSubmit={handleActivateUser}>
         <label>          
           Introduce Your Activation Code:
