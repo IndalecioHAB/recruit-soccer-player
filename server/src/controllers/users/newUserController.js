@@ -38,9 +38,10 @@ const newUserController = async (req, res, next) => {
         const emailBody = `
             ¡Bienvenid@ ${username}!
 
-            Gracias por registrarte en Reclutadores y Familias. Para activar tu cuenta, haz clic en el siguiente enlace:
+            Gracias por registrarte en Reclutadores y Familias. Para activar tu cuenta,
+            haz clic en el enlace e introduce el siguiente codigo: ${registrationCode}
 
-            <a href="${CLIENT_URL}/users/validate/${registrationCode}">¡Activar mi cuenta!</a>
+            <a href="${CLIENT_URL}/users/validate/">¡Activar mi cuenta!</a>
         `;
 
         // Enviamos el email de verificación al usuario.
